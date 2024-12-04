@@ -6,7 +6,6 @@ const shoppingCart = [
   },
   {
     product: "Apples",
-
     price: 0.7,
     quantity: 8,
   },
@@ -19,7 +18,9 @@ const shoppingCart = [
 
 let totalCost = 0;
 
-for (let i = 0; i <= shoppingCart.length; i++) {
+console.log(shoppingCart)
+
+for (let i = 0; i <= shoppingCart.length - 1; i++) {
   const item = shoppingCart[i];
   const costForItem = item.price * item.quantity;
   totalCost += costForItem;
@@ -31,3 +32,6 @@ const formatter = new Intl.NumberFormat("en-GB", {
 });
 
 console.log(`The total cost for this cart is ${formatter.format(totalCost)}`);
+
+
+// Issue was on the condition on the for loop, counter was doing an extra iteration. ... .length -1 instead of ... .length

@@ -42,14 +42,16 @@ function playGame() {
 
     const userHasAnsweredIncorrectly = userChoice !== question.correctChoice;
     if (userHasAnsweredIncorrectly) {
-      return;
-      alert(`Incorrect, you lose! The correct answer was ${question.correctChoice}. Your score was ${score}.`);
+      return alert(`Incorrect, you lose! The correct answer was ${question.correctChoice}. Your score was ${score}.`);
     }
 
     score++;
-    alert(`Correct! Your score is now ${score}!`);
-    alert (`You've reached the end of the quiz, your score was ${score}. Please play again!`);
+    if(score === 10){
+      alert (`You've reached the end of the quiz, your score was ${score}. Please play again!`);
 
+    } else {
+    alert(`Correct! Your score is now ${score}!`);
+  }
   }
 
 
@@ -72,19 +74,19 @@ playGame();
 //      ✅if the user has cancelled (whilst entering a choice):
 //          ✅tell them they've cancelled and won't see any questions
 //          ✅stop everything (not just the loop) immediately and don't run any more steps
-//      otherwise make sure the user has entered either: A or B or C or D or a or b or c or d
-//      if they haven't entered a valid choice, prompt them again
+//     v  otherwise make sure the user has entered either: A or B or C or D or a or b or c or d
+//     v if they haven't entered a valid choice, prompt them again
 //      if user's choice doesn't match the correct choice (for the current question):
-//          tell the user they answered incorrectly, what the correct answer was and what their score is
-//          stop everything (not just the loop) immediately and don't run any more steps
+//         v tell the user they answered incorrectly, what the correct answer was and what their score is
+//         v stop everything (not just the loop) immediately and don't run any more steps
 //      otherwise (user must have answered correctly):
-//          increment the user's score
-//          tell the user they answered correctly and what their current score is
-// the user will only make it to the end of the loop if they've answered all 10 questions.
-// after the loop, tell the user they've reached the end of the quiz and what their score is.
-Users have reported several bugs in the quiz app:
+//         v increment the user's score
+//         v tell the user they answered correctly and what their current score is
+// v the user will only make it to the end of the loop if they've answered all 10 questions.
+// v after the loop, tell the user they've reached the end of the quiz and what their score is.
+v Users have reported several bugs in the quiz app:
 
 ✅Quiz proceeds after users decline to play.
-Incorrect score tracking - scores are too low.
-Crashes after 10 questions are asked.
+v Incorrect score tracking - scores are too low.
+v Crashes after 10 questions are asked.
 */

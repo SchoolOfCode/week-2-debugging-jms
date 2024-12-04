@@ -1,8 +1,9 @@
 function countNumberOfNinesInNumber(number) {
   let count = 0;
-
-  for (let i = 0; i < number.length; i++) {
-    const digit = number[i];
+  let newNumber = number.toString();
+  
+  for (let i = 0; i < newNumber.length; i++) {
+    const digit = newNumber[i];
     if ("9" === digit) {
       count++;
     }
@@ -10,3 +11,9 @@ function countNumberOfNinesInNumber(number) {
 
   return count;
 }
+console.log(countNumberOfNinesInNumber(99999999));
+
+
+
+
+// it was expecting string as an input. we converted number to string

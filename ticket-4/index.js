@@ -16,4 +16,3 @@ console.log(grade, "should be A");
 
 // 1st bug fix: spelling mistakes
 // 2nd bug fix: first comparison operator was wrong and points enclosed in parenthesis
-// 
